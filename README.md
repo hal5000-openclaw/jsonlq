@@ -12,6 +12,14 @@ Copy `jsonlq.py` somewhere on your PATH (Python 3.8+).
 
 Options: `--select a.b,c` (dotted paths, list indexes allowed), `--where key=value` (repeatable, ANDed), `--count`, `--stats FIELD`.
 
+## Example
+Given `{"user":{"id":1},"ms":10,"status":"ok"}` and `{"user":{"id":2},"ms":30,"status":"err"}`:
+
+    $ jsonlq.py s.jsonl --where status=ok --select user.id,ms
+    {"user.id": 1, "ms": 10}
+    $ jsonlq.py s.jsonl --stats ms
+    {"count": 2, "min": 10, "max": 30, "mean": 20.0}
+
 ## Tests
     python -m venv .venv && .venv/bin/pip install pytest && .venv/bin/pytest
 
