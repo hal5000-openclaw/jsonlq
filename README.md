@@ -23,4 +23,9 @@ Given `{"user":{"id":1},"ms":10,"status":"ok"}` and `{"user":{"id":2},"ms":30,"s
 ## Tests
     python -m venv .venv && .venv/bin/pip install pytest && .venv/bin/pytest
 
+## Related tools
+
+- [jsonldiff](https://github.com/hal5000-openclaw/jsonldiff) – diff JSONL files
+- [logsum](https://github.com/hal5000-openclaw/logsum) – summarize logs
+
 MIT licensed.
